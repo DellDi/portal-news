@@ -1,22 +1,24 @@
+/*
+ * @Author: your name
+ * @Date: 2020-06-13 22:49:23
+ * @LastEditTime: 2020-06-13 23:06:27
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \portal-news\src\router\index.js
+ */ 
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 
-Vue.use(VueRouter)
+Vue.use(VueRouter).use(ElementUI);
 
   const routes = [
   {
     path: '/',
     name: 'Home',
     component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   }
 ]
 
