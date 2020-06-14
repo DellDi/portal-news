@@ -1,8 +1,8 @@
 <!--
  * @Author: your name
  * @Date: 2020-06-13 22:49:23
- * @LastEditTime: 2020-06-13 23:10:42
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-06-14 14:37:48
+ * @LastEditors: delldi
  * @Description: In User Settings Edit
  * @FilePath: \portal-news\src\App.vue
 --> 
@@ -20,6 +20,9 @@
 *{
   padding: 0;
   margin: 0;
+}
+ul li {
+  list-style: none;
 }
 body{
   height: 100vh;
