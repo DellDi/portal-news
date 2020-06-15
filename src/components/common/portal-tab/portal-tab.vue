@@ -52,6 +52,7 @@ export default {
   // box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
   > div {
     display: flex;
+    margin-right: 10px;
     // align-items: center;
     // padding: 23px 0 15px 29px;
     span {
@@ -74,7 +75,7 @@ export default {
     
     .portal_icon {
       transform: translateY(-2px);
-      margin-right: 30px;
+      // margin-right: 30px;
       font-size: 18px;
       color: #4b90f1;
       span {
