@@ -22,14 +22,14 @@ export default {
   props: {
     width: {
       type: String,
-      default: "55px"
+      default: "50px"
     },
     height: {
       type: String,
-      default: "55px"
+      default: "50px"
     },
     avator: {
-      type: String,
+      type: String, 
       default:
         "https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
     },
@@ -41,10 +41,10 @@ export default {
       type: Map,
       default: () =>
         new Map([
-          [0, "yellow"],
-          [1, "black"],
-          [2, "green"],
-          [3, "red"]
+          [0, "#FA875A"],
+          [1, "#FEBA50"],
+          [2, "#4B90F1"],
+          [3, "#45C173"]
         ])
     }
   },

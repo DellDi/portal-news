@@ -20,7 +20,7 @@ import PortalDatePanel from './portal-date-panel/portal-date-panel'
     display: grid;
     grid-template-columns: repeat(3, 1fr) 150px;
     grid-template-rows: repeat(4, 100px);
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+    // box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
     .date_compontents {
         grid-column: 1 / 4;
         grid-row: 1 / 5;

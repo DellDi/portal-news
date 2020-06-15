@@ -15,7 +15,7 @@ export default {
   props: {
     height: {
       type: String,
-      default: "300px"
+      default: "220px"
     },
     bannerList: {
       type: Array,
@@ -37,29 +37,31 @@ export default {
   p {
     position: absolute;
     z-index: 10;
-    bottom: 40px;
-    left: 20%;
+    bottom: 9px;
+    left: 10px;
     width: 60%;
     font-size: 13px;
-    line-height: 30px;
     color: rgb(175, 175, 175);
     background: rgba($color: #000000, $alpha: 0.1);
     @extend %overflow;
   }
   img {
     width: 100%;
-    height: 300px;
+    height: 100%;
   }
-  /deep/ .el-carousel__button {
+  /deep/ .el-carousel__button { // 小圆点
     width: 8px;
     height: 8px;
     border-radius: 50%;
   }
-  /deep/ .el-carousel__indicators--horizontal {
+  /deep/ .el-carousel__indicators--horizontal { // 小圆点组
     bottom: 0;
     left: unset;
     transform: none;
     right: 10px;
+  }
+  /deep/ .el-carousel__indicator--horizontal { // 小圆点水平
+    padding: 6px 2px;
   }
 }
 .el-carousel__item h3 {

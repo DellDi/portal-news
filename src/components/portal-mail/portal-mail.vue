@@ -2,30 +2,39 @@
   <div class="portal_message" :style="{height}">
     <!-- 流程tab -->
     <portal-tab>
-      <template #icon>
-        <div></div>
+      <template #left>
+        <div class="tab_text">
+          <img src="../../assets/images/youjian.png" alt />
+          <span>邮件中心</span>
+        </div>
+      </template>
+        <template #icon>
+        <span class="portal_icon">
+          <i class="el-icon-edit"></i>
+          <span>待办事项</span>
+        </span>
       </template>
     </portal-tab>
     <!-- 列表项 -->
     <ul class="info_container">
-      <info-block v-for="infoLi of catalogList" :key="infoLi.id" :messageItem="infoLi"></info-block>
+      <block-mail v-for="infoLi of catalogList" :key="infoLi.id" :messageItem="infoLi"></block-mail>
     </ul>
   </div>
 </template>
 
 <script>
 import PortalTab from "../common/portal-tab/portal-tab";
-import InfoBlock from "../common/info-block/info-block";
+import BlockMail from "./block-mail/block-mail";
 export default {
-  name: "PortalMessage",
+  name: "PortalMail",
   components: {
     PortalTab,
-    InfoBlock
+    BlockMail
   },
   props: {
     height: {
       type: String,
-      default: "400px"
+      default: "450px"
     }
   },
   data() {
@@ -84,20 +93,23 @@ export default {
 
 <style lang="scss" scoped>
 .portal_message {
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+  // box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+  .tab_text {
+    margin-left: 24px;
+  }
   .info_container {
     li {
       position: relative;
-      padding: 5px 10px;
+      padding: 15px 20px;
     }
     .information:not(:last-of-type)::after {
-       content: "";
+      content: "";
       position: absolute;
-      width: calc(100% - 60px);
+      width: calc(100% - 95px);
       height: 1px;
-      left: 60px;
+      left: 90px;
       bottom: 0;
-      background-color: #dcdfe6;
+      background-color: #f5f5f5;
     }
   }
 }
