@@ -14,6 +14,14 @@
 <script>
 export default {
   name: "PortalDatePanel",
+  watch: {
+    dateTime: {
+      handler(date) {
+        this.$emit('dateChange', date)
+      },
+      immediate: true
+    }
+  },
   data() {
     return {
       dateTime: new Date()
@@ -36,7 +44,7 @@ export default {
     border-radius: 25px;
     background: linear-gradient(145deg, #f5f5f5, #ffffff);
     box-shadow: 5px 5px 10px #ececec, -5px -5px 10px #ffffff;
-    transition:  all 0.3s;
+    transition: all 0.3s;
     &:hover {
       background: linear-gradient(-90deg, #b4d8f0, #dfeaff);
     }
@@ -46,6 +54,9 @@ export default {
     height: 100%;
   }
   // 初始化样式
+  /deep/ .el-calendar__header {
+    display: none;
+  }
   /deep/ .el-calendar__body {
     padding: unset;
     height: calc(100% - 51px);

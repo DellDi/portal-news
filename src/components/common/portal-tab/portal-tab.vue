@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  name: "PotalTab",
+  name: "PortalTab",
   props: {
     height: {
       type: String,
@@ -56,10 +56,11 @@ export default {
     // align-items: center;
     // padding: 23px 0 15px 29px;
     span {
-      margin-left: 10px;
+      margin-left: 7px;
       font-size: 16px;
       font-family: MicrosoftYaHei-Bold, MicrosoftYaHei;
       font-weight: bold;
+      line-height: 24px;
       color: rgba(51, 51, 51, 1);
     }
   }
