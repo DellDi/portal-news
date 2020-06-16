@@ -96,7 +96,7 @@ export default {
       position: relative;
       padding: 15px 20px;
     }
-    .information:not(:last-of-type)::after {
+    li:not(:last-of-type)::after {
       content: "";
       position: absolute;
       width: calc(100% - 95px);

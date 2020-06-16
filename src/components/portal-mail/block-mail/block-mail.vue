@@ -83,7 +83,7 @@ export default {
     justify-self: end;
     grid-area: time;
     font-size: 14px;
-    color:  #ccc;
+    color:  #999;
   }
 }
 </style>
