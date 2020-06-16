@@ -4,7 +4,7 @@
     <portal-tab>
       <template #left>
         <div class="tab_text">
-          <img src="../../assets/images/daiban.png" alt />
+          <img src="../assets/images/daiban.png" alt />
           <span>待办事项</span>
         </div>
       </template>

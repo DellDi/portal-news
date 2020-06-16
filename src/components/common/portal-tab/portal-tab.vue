@@ -2,7 +2,7 @@
   <div class="portal_tab" :style="{height}">
     <slot name="left">
       <div>
-        <img src="../../../assets/images/gongwenbao.png" alt />
+        <img src="../../assets/images/gongwenbao.png" alt />
         <span>启动流程</span>
       </div>
     </slot>

@@ -43,10 +43,10 @@ export default {
     backgroundMap: {
       type: Object,
       default: () => ({
-        0: require("../../assets/images/shouyetubiao2-27 copy.png"),
-        1: require("../../assets/images/tiaoxiushenqing copy.png"),
-        2: require("../../assets/images/Group 3 Copy.png"),
-        3: require("../../assets/images/Group Copy.png")
+        0: require("../assets/images/shouyetubiao2-27 copy.png"),
+        1: require("../assets/images/tiaoxiushenqing copy.png"),
+        2: require("../assets/images/Group 3 Copy.png"),
+        3: require("../assets/images/Group Copy.png")
       })
     }
   }
@@ -72,7 +72,7 @@ export default {
     
     margin: 5px;
     
-    // background: url("../../assets/images/shouyetubiao2-27 copy.png") no-repeat center center;
+    // background: url("../assets/images/shouyetubiao2-27 copy.png") no-repeat center center;
     span {
       margin-left: 24px;
     }

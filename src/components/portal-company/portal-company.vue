@@ -4,7 +4,7 @@
     <portal-tab>
       <template #left>
         <div class="tab_text">
-          <img src="../../assets/images/gongwenbao.png" alt />
+          <img src="../assets/images/gongwenbao.png" alt />
           <span>公司公文</span>
         </div>
       </template>

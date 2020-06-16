@@ -1,11 +1,36 @@
 <template>
   <div class="date_panel">
-    <el-calendar v-model="dateTime">
+    <el-calendar v-model="dateTime" :first-day-of-week="7">
       <template #dateCell="{date, data}">
-        <div
-          class="date_item"
-          :class="data.isSelected ? 'is-selected' : ''"
-        >{{ data.day.split('-').slice(2).join('-') }}</div>
+        <el-popover
+          v-if="data.day.split('-').slice(2).join('-')  === '12'"
+          placement="top-start"
+          title="标题"
+          width="200"
+          trigger="hover"
+          content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。"
+        >
+          <div class="date_item" slot="reference">
+            <span
+              class="day_span"
+              :class="[{'is-selected' : data.isSelected}]"
+            >{{ data.day | dayNum }}</span>
+            <span
+              class="day_line"
+              :class="[{'block_tag': data.day.split('-').slice(2).join('-')  === '12'}]"
+            ></span>
+          </div>
+        </el-popover>
+        <div class="date_item" v-else>
+          <span
+            class="day_span"
+            :class="[{'is-selected' : data.isSelected}]"
+          >{{ data.day | dayNum }}</span>
+          <!-- <span
+            class="day_line"
+            :class="[{'block_tag': data.day.split('-').slice(2).join('-')  === '12'}]"
+          ></span> -->
+        </div>
       </template>
     </el-calendar>
   </div>
@@ -14,13 +39,29 @@
 <script>
 export default {
   name: "PortalDatePanel",
+  filters: {
+    dayNum(day) {
+      return day
+        .split("-")
+        .slice(2)
+        .join("-");
+    }
+  },
   watch: {
+    value: {
+      handler(date) {
+        this.dateTime = date;
+      }
+    },
     dateTime: {
       handler(date) {
-        this.$emit('dateChange', date)
+        this.$emit("dateChange", date);
       },
       immediate: true
     }
+  },
+  props: {
+    value: [Date]
   },
   data() {
     return {
@@ -38,15 +79,37 @@ export default {
     background-color: unset;
   }
   .date_item {
-    width: 45.5px;
-    height: 45.5px;
-    line-height: 45.5px;
-    border-radius: 25px;
-    background: linear-gradient(145deg, #f5f5f5, #ffffff);
-    box-shadow: 5px 5px 10px #ececec, -5px -5px 10px #ffffff;
-    transition: all 0.3s;
-    &:hover {
-      background: linear-gradient(-90deg, #b4d8f0, #dfeaff);
+    position: relative;
+    // width: 45.5px;
+    // height: 45.5px;
+    // line-height: 45.5px;
+    // border-radius: 25px;
+    // background: linear-gradient(145deg, #f5f5f5, #ffffff);
+    // box-shadow: 5px 5px 10px #ececec, -5px -5px 10px #ffffff;
+    // transition: all 0.3s;
+    // &:hover {
+    //   background: linear-gradient(-90deg, #b4d8f0, #dfeaff);
+    // }
+    // width: 18px;
+    // height: 18px;
+
+    // line-height: 18px;
+    .day_span {
+      display: inline-block;
+      width: 100%;
+      font-size: 14px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      padding: 1px;
+    }
+    .day_line {
+      position: absolute;
+      display: inline-block;
+      width: 100%;
+      height: 5px;
+      bottom: -8px;
+      left: 2px;
+      background: #000;
     }
   }
 
@@ -93,6 +156,7 @@ export default {
   }
 }
 .is-selected {
-  color: rgb(245, 12, 12);
+  border-radius: 50%;
+  border: 1px solid rgba(52, 135, 226, 1);
 }
 </style>

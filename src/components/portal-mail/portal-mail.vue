@@ -4,7 +4,7 @@
     <portal-tab>
       <template #left>
         <div class="tab_text">
-          <img src="../../assets/images/youjian.png" alt />
+          <img src="../assets/images/youjian.png" alt />
           <span>邮件中心</span>
         </div>
       </template>

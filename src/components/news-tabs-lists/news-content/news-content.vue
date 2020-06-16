@@ -5,7 +5,7 @@
         <!-- <el-link href="https://element.eleme.io" target="_blank">{{ news.newsText }}</el-link> -->
         <div class="new_content">
           <!-- <el-tag v-if="news.id === 22" :type="tagsColorMap[news.newType]" effect="light">标记</el-tag> -->
-          <img src="../../../assets/images/sheweizhiding.png" alt="">
+          <img src="../../assets/images/sheweizhiding.png" alt="">
           <a>{{ news.newsText }}</a>
           <span class="tag">NEW</span>
         </div>
